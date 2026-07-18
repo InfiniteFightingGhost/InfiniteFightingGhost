@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 120" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="widgetGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0d14" />
+      <stop offset="100%" stop-color="#111622" />
+    </linearGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="mintGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .panel { fill: url(#widgetGrad); stroke: #10b981; stroke-width: 1; stroke-opacity: 0.15; }
+    .label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 10px; font-weight: 700; fill: #10b981; opacity: 0.45; letter-spacing: 1.5px; }
+    .title-val { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 16px; font-weight: 700; fill: #e6fffa; }
+    .sub-val { font-family: 'Fira Code', 'Courier New', monospace; font-size: 11px; fill: #a7f3d0; opacity: 0.8; }
+    
+    .stats-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; fill: #a7f3d0; opacity: 0.6; }
+    .stats-num { font-family: 'Fira Code', 'Courier New', monospace; font-size: 12px; font-weight: bold; fill: #e6fffa; }
+    
+    .divider { stroke: #10b981; stroke-width: 1; stroke-opacity: 0.08; stroke-dasharray: 4,4; }
+  </style>
+
+  <!-- Panel Border and Background -->
+  <rect x="1" y="1" width="848" height="118" rx="8" class="panel" />
+
+  <!-- Column 1: System Stats -->
+  <g transform="translate(25, 20)">
+    <text x="0" y="15" class="label">SYSTEM METRICS (YEAR)</text>
+    
+    <!-- Commits -->
+    <text x="0" y="42" class="stats-label">Contributions:</text>
+    <text x="120" y="42" class="stats-num">1240</text>
+    
+    <!-- Stars -->
+    <text x="0" y="67" class="stats-label">Stars Garnered:</text>
+    <text x="120" y="67" class="stats-num">42</text>
+    
+    <!-- Top Repo -->
+    <text x="0" y="92" class="stats-label">Top Formation:</text>
+    <text x="120" y="92" class="stats-num">Raptor</text>
+  </g>
+
+  <!-- Divider -->
+  <line x1="330" y1="15" x2="330" y2="105" class="divider" />
+
+  <!-- Column 2: Live Activity -->
+  <g transform="translate(360, 20)">
+    <text x="0" y="15" class="label">LAST FOLD (ACTIVITY)</text>
+    <text x="0" y="45" class="title-val">Raptor: &quot;Optimized VM register allocatio...</text>
+    <text x="0" y="70" class="sub-val">just now • Compiled successfully</text>
+  </g>
+
+  <!-- Dynamic graphics section -->
+  
+      <g class="coding-pulse" transform="translate(760, 45)">
+        <circle cx="15" cy="15" r="10" fill="#10b981" fill-opacity="0.1" filter="url(#mintGlow)">
+          <animate attributeName="r" values="8;18;8" dur="2s" repeatCount="indefinite" />
+          <animate attributeName="fill-opacity" values="0.2;0.02;0.2" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="15" cy="15" r="5" fill="#10b981" filter="url(#mintGlow)" />
+      </g>
+    
+
+</svg>

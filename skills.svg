@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 160" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="panelGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0d14" />
+      <stop offset="100%" stop-color="#111622" />
+    </linearGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="mintGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    /* Styles */
+    .panel { fill: url(#panelGrad); stroke: #10b981; stroke-width: 1; stroke-opacity: 0.15; }
+    
+    .section-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 700; fill: #e6fffa; letter-spacing: 1.5px; }
+    .col-divider { stroke: #10b981; stroke-width: 1; stroke-opacity: 0.08; stroke-dasharray: 4,4; }
+    
+    /* Badge Styles */
+    .badge-bg { fill: #0e171b; stroke: #10b981; stroke-width: 1; stroke-opacity: 0.25; rx: 4px; }
+    .badge-bg:hover { stroke-opacity: 0.6; fill: #112224; }
+    .badge-text { font-family: 'Fira Code', 'Courier New', monospace; font-size: 11px; fill: #a7f3d0; text-anchor: middle; font-weight: 500; }
+    
+    /* Origami Icon Styles */
+    .origami-icon { filter: url(#mintGlow); }
+    .facet-light { fill: #6ee7b7; opacity: 0.9; }
+    .facet-medium { fill: #34d399; opacity: 0.8; }
+    .facet-dark { fill: #059669; opacity: 0.7; }
+  </style>
+
+  <!-- Panel Border and Background -->
+  <rect x="1" y="1" width="848" height="158" rx="8" class="panel" />
+
+  <!-- Column Dividers -->
+  <line x1="285" y1="20" x2="285" y2="140" class="col-divider" />
+  <line x1="565" y1="20" x2="565" y2="140" class="col-divider" />
+
+  <!-- ================= COLUMN 1: SYSTEMS & TOOLS ================= -->
+  <!-- Origami Icon: Folded Diamond -->
+  <g class="origami-icon" transform="translate(25, 20)">
+    <polygon points="12,2 22,12 12,22 2,12" fill="none" stroke="#10b981" stroke-width="0.5" />
+    <polygon points="12,2 12,22 2,12" class="facet-medium" />
+    <polygon points="12,2 22,12 12,22" class="facet-light" />
+  </g>
+  <text x="57" y="35" class="section-title">SYSTEMS &amp; TOOLS</text>
+  
+  <!-- Badges Row 1 -->
+  <g transform="translate(25, 55)">
+    <rect x="0" y="0" width="85" height="24" class="badge-bg" />
+    <text x="42.5" y="15" class="badge-text">C# (Unsafe)</text>
+  </g>
+  <g transform="translate(118, 55)">
+    <rect x="0" y="0" width="142" height="24" class="badge-bg" />
+    <text x="71" y="15" class="badge-text">BenchmarkDotNet</text>
+  </g>
+  
+  <!-- Badges Row 2 -->
+  <g transform="translate(25, 90)">
+    <rect x="0" y="0" width="45" height="24" class="badge-bg" />
+    <text x="22.5" y="15" class="badge-text">Lua</text>
+  </g>
+  <g transform="translate(78, 90)">
+    <rect x="0" y="0" width="82" height="24" class="badge-bg" />
+    <text x="41" y="15" class="badge-text">CLI Tools</text>
+  </g>
+  <g transform="translate(168, 90)">
+    <rect x="0" y="0" width="92" height="24" class="badge-bg" />
+    <text x="46" y="15" class="badge-text">Ecosystems</text>
+  </g>
+
+  <!-- ================= COLUMN 2: BACKEND & DB ================= -->
+  <!-- Origami Icon: Folded Triangle/Arrow -->
+  <g class="origami-icon" transform="translate(305, 20)">
+    <polygon points="2,2 22,12 2,22" fill="none" stroke="#10b981" stroke-width="0.5" />
+    <polygon points="2,2 22,12 2,12" class="facet-light" />
+    <polygon points="2,12 22,12 2,22" class="facet-dark" />
+  </g>
+  <text x="337" y="35" class="section-title">BACKEND &amp; DATABASES</text>
+
+  <!-- Badges Row 1 -->
+  <g transform="translate(305, 55)">
+    <rect x="0" y="0" width="96" height="24" class="badge-bg" />
+    <text x="48" y="15" class="badge-text">ASP.NET Core</text>
+  </g>
+  <g transform="translate(409, 55)">
+    <rect x="0" y="0" width="62" height="24" class="badge-bg" />
+    <text x="31" y="15" class="badge-text">EF Core</text>
+  </g>
+  <g transform="translate(479, 55)">
+    <rect x="0" y="0" width="68" height="24" class="badge-bg" />
+    <text x="34" y="15" class="badge-text">SQL Server</text>
+  </g>
+
+  <!-- Badges Row 2 -->
+  <g transform="translate(305, 90)">
+    <rect x="0" y="0" width="76" height="24" class="badge-bg" />
+    <text x="38" y="15" class="badge-text">DB Design</text>
+  </g>
+  <g transform="translate(389, 90)">
+    <rect x="0" y="0" width="62" height="24" class="badge-bg" />
+    <text x="31" y="15" class="badge-text">Python</text>
+  </g>
+  <g transform="translate(459, 90)">
+    <rect x="0" y="0" width="88" height="24" class="badge-bg" />
+    <text x="44" y="15" class="badge-text">JavaScript</text>
+  </g>
+
+  <!-- ================= COLUMN 3: FOLDS IN PROGRESS ================= -->
+  <!-- Origami Icon: Interlocking Folds -->
+  <g class="origami-icon" transform="translate(585, 20)">
+    <polygon points="2,8 12,2 17,14 7,20" class="facet-medium" />
+    <polygon points="7,20 17,14 22,20 12,22" class="facet-dark" />
+    <polygon points="12,2 22,8 17,14" class="facet-light" />
+  </g>
+  <text x="617" y="35" class="section-title">FOLDS IN PROGRESS</text>
+
+  <!-- Badges Row 1 -->
+  <g transform="translate(585, 55)">
+    <rect x="0" y="0" width="82" height="24" class="badge-bg" />
+    <text x="41" y="15" class="badge-text">Bare Metal</text>
+  </g>
+  <g transform="translate(675, 55)">
+    <rect x="0" y="0" width="82" height="24" class="badge-bg" />
+    <text x="41" y="15" class="badge-text">C++ / Rust</text>
+  </g>
+  <g transform="translate(765, 55)">
+    <rect x="0" y="0" width="62" height="24" class="badge-bg" />
+    <text x="31" y="15" class="badge-text">DSA &amp; CP</text>
+  </g>
+
+  <!-- Badges Row 2 -->
+  <g transform="translate(585, 90)">
+    <rect x="0" y="0" width="112" height="24" class="badge-bg" />
+    <text x="56" y="15" class="badge-text">Technical Writing</text>
+  </g>
+  <g transform="translate(705, 90)">
+    <rect x="0" y="0" width="122" height="24" class="badge-bg" />
+    <text x="61" y="15" class="badge-text">Ecosystem Design</text>
+  </g>
+</svg>
