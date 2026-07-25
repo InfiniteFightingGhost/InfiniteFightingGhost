@@ -37,7 +37,7 @@
     
     <!-- Commits -->
     <text x="0" y="42" class="stats-label">Contributions:</text>
-    <text x="120" y="42" class="stats-num">192</text>
+    <text x="120" y="42" class="stats-num">199</text>
     
     <!-- Stars -->
     <text x="0" y="67" class="stats-label">Stars Garnered:</text>
@@ -54,8 +54,8 @@
   <!-- Column 2: Live Activity -->
   <g transform="translate(360, 20)">
     <text x="0" y="15" class="label">LAST FOLD (ACTIVITY)</text>
-    <text x="0" y="45" class="title-val">Raptor: &quot;fix(compiler): add fixes for ed...</text>
-    <text x="0" y="70" class="sub-val">3m ago • Compiled successfully</text>
+    <text x="0" y="45" class="title-val">Raptor: &quot;fix(compiler): add read before ...</text>
+    <text x="0" y="70" class="sub-val">23m ago • Compiled successfully</text>
   </g>
 
   <!-- Dynamic graphics section -->
