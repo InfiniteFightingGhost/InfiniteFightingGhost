@@ -39,7 +39,7 @@ MIT-licensed virtual machine and scripting pipeline written from scratch in
 unsafe C#. I built the compiler, assembler, bytecode verifier, FFI host binding,
 CLI, tests, benchmarks, and CI.
 
-- Register-based VM with pinned memory, raw pointers, and a custom heap.
+- Register-based VM with pinned memory, raw pointers, a custom heap, and RISC-V-style sliding register windows.
 - RaptorScript compiler: lexer, parser, AST, code generation, source maps.
 - Bytecode verifier, disassembler, hot reload, and debug/profile run modes.
 - 159 xUnit test methods, cross-platform CI, NativeAOT smoke test, and a NuGet preview.
@@ -49,14 +49,17 @@ CLI, tests, benchmarks, and CI.
 
 Raptor is an R&D preview, not production-proven software. The benchmark numbers
 in the repo come from my hardware and are sensitive to allocation layout; I
-don't present them as independent or universal results.
+don't present them as independent or universal results. The sliding-window call
+model also has a known recursion-depth limit. I can re-read the VM internals
+before a deep technical walkthrough.
 
 ### WorkoutTracker — C# backend (private)
 
-A multi-user strength-training API. I built the core C# backend: domain model,
-controllers, services, `DbContext`, DTOs, and migrations. The React frontend, the
-Python analytics service, the later analytics integration, and the test suite
-were built with AI agents under my direction.
+A multi-user strength-training API. I designed the database schema and data
+models and wrote most of the service layer. Controllers, DTOs, Identity wiring,
+the React frontend, the Python analytics service, the later analytics
+integration, and the test suite were completed with AI agents under my
+direction.
 
 - ASP.NET Core controllers and services with per-user ownership checks.
 - EF Core + SQL Server: 17-entity schema, 29 migrations, check constraints,
@@ -67,7 +70,7 @@ were built with AI agents under my direction.
 - Service boundaries for a separate analytics service; the later wiring was
   built with AI agents.
 
-The repository is private. I can walk through the code, explain the domain
+The repository is private. I can re-read the code and walk through the domain
 model and request flow, or provide a small scoped sample on request.
 
 ## How I work
@@ -84,7 +87,7 @@ model and request flow, or provide a small scoped sample on request.
 
 | Area | What I actually use |
 | :--- | :--- |
-| **Backend (hand-built)** | C#, ASP.NET Core, REST APIs, EF Core, SQL Server, Identity, DTOs, xUnit, Git, GitHub Actions |
+| **Backend (core hand-built)** | C#, ASP.NET Core, REST APIs, EF Core, SQL Server, Identity, DTOs, xUnit, Git, GitHub Actions |
 | **Systems (hand-built)** | Unsafe C#, pointers, `GCHandle`, `stackalloc`, bytecode VMs, compilers/assemblers, bytecode verification, FFI, BenchmarkDotNet, NativeAOT |
 | **Working knowledge** | Docker, PostgreSQL, OpenTelemetry, React/TypeScript, Python/FastAPI — mostly through AI-assisted projects; I integrate with these stacks but do not sell myself as a frontend or ML specialist |
 
@@ -97,11 +100,12 @@ in those stacks:
 - **ApiWarden** — OpenAPI-driven API testing runner with PostgreSQL and OpenTelemetry.
 - **Noctis** — FastAPI sleep-analytics backend.
 - **Unturned Planner** — React/Three.js base planner.
+- **WorkoutTracker analytics engine** — FastAPI athlete-performance prediction/MPC service for weightlifting and hypertrophy, merged into WorkoutTracker.
 
 ## A note on experience
 
 I don't have commercial client work yet. What I do have is code you can inspect:
-Raptor is public, and I can walk you through the private WorkoutTracker backend.
+Raptor is public, and I can re-read and walk you through the private WorkoutTracker backend.
 I'd rather show you the work and let you judge it than claim experience I don't
 have.
 
