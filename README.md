@@ -64,7 +64,8 @@ were built with AI agents under my direction.
 - ASP.NET Core Identity bearer auth, DTO-based API surface, and Swagger.
 - Workout, template, exercise, personal-record, and measurement workflows,
   including e1RM, INOL, and PR upsert logic.
-- Typed integration with a separate analytics service.
+- Service boundaries for a separate analytics service; the later wiring was
+  built with AI agents.
 
 The repository is private. I can walk through the code, explain the domain
 model and request flow, or provide a small scoped sample on request.
