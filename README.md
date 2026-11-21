@@ -42,7 +42,7 @@ CLI, tests, benchmarks, and CI.
 - Register-based VM with pinned memory, raw pointers, and a custom heap.
 - RaptorScript compiler: lexer, parser, AST, code generation, source maps.
 - Bytecode verifier, disassembler, hot reload, and debug/profile run modes.
-- 159 tests, cross-platform CI, NativeAOT smoke test, and a NuGet preview.
+- 159 xUnit test methods, cross-platform CI, NativeAOT smoke test, and a NuGet preview.
 - [Source](https://github.com/InfiniteFightingGhost/Raptor) ·
   [NuGet](https://www.nuget.org/packages/Raptor.VM) ·
   [Architecture docs](https://github.com/InfiniteFightingGhost/Raptor/blob/main/docs/architecture.md)
